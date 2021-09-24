@@ -1,35 +1,33 @@
-// Andmetyybid
+// tüübiteisendused
 
-// Primitives
+let val;
 
-// tekst
-const name = 'Kadi Tamm';
+// number -> string
+val = String(555);
+val = String(4+4);
+val = String(5.6);
 
-// numbrid
-const age = 15;
-const height = 1.75;
+// boolean -> string
+val = String(true);
+val = String(false);
 
-// toevaartused - true ja false
-const hasKids = false;
+// object -> string
+val = String(new Date());
 
-// null
-const hasAirplane = null;
+// array -> string
+val = String([1, 2, 3, 4]);
 
-// undefined
-let test;
+// toString()
+val = (5).toString();
 
-// Reference types
+// string -> number
+val = Number('5');
+val = Number('5.6');
+val = Number(true);
+val = Number(false);
+val = Number(null);
+val = Number('tere');
+val = Number([1, 2, 3]);
 
-// massiiv
-const hobbies = ['music', 'sport'];
-
-// object
-const person = {
-	name: 'Kadi',
-	age: 15
-};
-
-const today = new Date();
-
-console.log(today);
-console.log(typeof today);
+console.log(typeof val);
+console.log(val);
