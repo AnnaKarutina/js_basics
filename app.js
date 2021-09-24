@@ -1,33 +1,35 @@
-// Muutujad
-/*
-vaatame
-kuidas 
-luua ja kasutada muutujad
-*/
-// muutuja, mille sisu saab muuta
-let name = 'Kadi Tamm';
+// Andmetyybid
 
-name = "Kadi Lepp";
+// Primitives
 
-let fisrtName = 'Kadi';
-let $ = 'dollar';
+// tekst
+const name = 'Kadi Tamm';
 
-// muutuja, mis on konstantne
-const surName = 'Tamm';
-// surName = 'Lepp';
+// numbrid
+const age = 15;
+const height = 1.75;
 
-// massiivid
+// toevaartused - true ja false
+const hasKids = false;
 
-const numbers = [1, 2, 3, 4];
-numbers.push(6);
+// null
+const hasAirplane = null;
 
-// objektid
+// undefined
+let test;
+
+// Reference types
+
+// massiiv
+const hobbies = ['music', 'sport'];
+
+// object
 const person = {
 	name: 'Kadi',
-	age: 20
+	age: 15
 };
 
-person.age = 21;
+const today = new Date();
 
-console.log(numbers);
-console.log(person);
+console.log(today);
+console.log(typeof today);
