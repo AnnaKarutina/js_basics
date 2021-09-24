@@ -1,41 +1,30 @@
 const firstname = 'Kadi';
 const surname = 'Tamm';
 const age = 20;
-const text = 'Tere, olen Kadi!';
 const tags = 'arendus,veeb';
 
 let val;
 
-// concatenation
-val = firstname + ' ' + surname;
+// concatenation - es5
+val = '<ul>' + '<li>' + firstname + '</li>' + '<li>' + surname + '</li>' + '<li>' + age + '</li>' + '<li>' + tags + '</li>'+ '</ul>';
 
-// append
-val = firstname;
-val += surname;
+val = '<ul>' + 
+		'<li>' + firstname + '</li>' + 
+		'<li>' + surname + '</li>' + 
+		'<li>' + age + '</li>' + 
+		'<li>' + tags + '</li>'+ 
+	'</ul>';
 
-val = text + ' Minu töövaldkond on ' + tags;
+// templating - es6
+val = `
+	<ul>
+		<li>Eesnimi: ${firstname}</li>
+		<li>Perenimi: ${surname}</li>
+		<li>Vanus: ${age}</li>
+		<li>Alad: ${tags}</li>
+	</ul>
+`;
 
-// escaping \"
-val = 'See on \'jutumärkides\'';
-
-// case
-val = firstname.toLowerCase();
-val = surname.toUpperCase();
-
-val = surname[0];
-val = surname.charAt(2);
-
-val = surname.length;
-val = surname.charAt(surname.length - 1);
-
-val = surname.indexOf('a');
-val = surname.indexOf('m');
-val = surname.lastIndexOf('m');
-
-val = surname.substring(0, 2);
-val = surname.slice(0, 2);
-val = surname.slice(-3);
-
-val = tags.split(',');
 
 console.log(val);
+document.body.innerHTML = val;
