@@ -1,24 +1,41 @@
-const num1 = 100;
-const num2 = 50;
+const firstname = 'Kadi';
+const surname = 'Tamm';
+const age = 20;
+const text = 'Tere, olen Kadi!';
+const tags = 'arendus,veeb';
 
 let val;
 
-// Matemaatilised tehed
-val = num1 + num2;
-val = num1 - num2;
-val = num1 * num2;
-val = num1 / num2;
-val = num1 % num2;
+// concatenation
+val = firstname + ' ' + surname;
 
-// Math
-val = Math.PI;
-val = Math.round(2.5);
-val = Math.ceil(2.4);
-val = Math.floor(2.8);
-val = Math.sqrt(64);
-val = Math.abs(-3);
-val = Math.pow(4, 2);
+// append
+val = firstname;
+val += surname;
 
-val = Math.round(Math.random() * 10);
+val = text + ' Minu töövaldkond on ' + tags;
+
+// escaping \"
+val = 'See on \'jutumärkides\'';
+
+// case
+val = firstname.toLowerCase();
+val = surname.toUpperCase();
+
+val = surname[0];
+val = surname.charAt(2);
+
+val = surname.length;
+val = surname.charAt(surname.length - 1);
+
+val = surname.indexOf('a');
+val = surname.indexOf('m');
+val = surname.lastIndexOf('m');
+
+val = surname.substring(0, 2);
+val = surname.slice(0, 2);
+val = surname.slice(-3);
+
+val = tags.split(',');
 
 console.log(val);
