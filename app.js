@@ -1,77 +1,49 @@
-/*
-if(tingimus){
-	// tegevused if puhul
-} else {
-	// tegevused else puhul
-}
-*/
-
-const id = 100;
-
-// võrdub - ==
-// võrdub + tüübikontroll - ===
-// ei võrdu - !=
-// ei võrdu + tüübikontroll - !==
-
-if(id !== 100){
-	console.log('OK');
-} else {
-	console.log('NOT OK');
-}
-
-let testId;
-if(typeof testId !== 'undefined'){
-	console.log('id is ok');
-} else {
-	console.log('id is not exists');
-}
-
-// > ja <
-if(id > 100){
-	console.log('id is greater than 100');
-} else {
-	console.log('id is equal 100 and less that');
-}
-
-// if - else if - else
-
 let color = 'blue';
 
-if(color === 'red'){
-	console.log('Stop!');
-} else if(color === 'yellow'){
-	console.log('Attention!');
-} else if(color === 'green'){
-	console.log('Go!');
-} else {
-	console.log('This color is not allowed');
+switch(color){
+	case 'red':
+		console.log('Stop!');
+		break;
+	case 'yellow':
+		console.log('Attention!');
+		break;
+	case 'green':
+		console.log('Go!');
+		break;
+	default:
+		console.log('This color is not allowed!');
+		break;
 }
 
-// and - && 
-// or - ||
+// loo kuupäeva objekt
+// nädalapäeva numbri järgi väljasta mis nädala
+// päevaga on tegu - eesti keeles
+// testi kõik päevad
 
-let name = 'Kadi';
-let age = 70;
+let day = new Date('10/03/2021');
+let daynr = day.getDay();
+// console.log(daynr);
 
-if(age > 0 && age <= 12){
-	console.log(`${name} on laps`);
-} else if(age > 12 && age < 18){
-	console.log(`${name} on nooruk`);
-} else {
-	console.log(`${name} on täiskasvanu`);
+switch(daynr){
+	case 0:
+		console.log('Pühapäev');
+		break;
+	case 1:
+		console.log('Esmaspäev');
+		break;
+	case 2:
+		console.log('Teisipäev');
+		break;
+	case 3:
+		console.log('Kolmapäev');
+		break;
+	case 4:
+		console.log('Neljapäev');
+		break;
+	case 5:
+		console.log('Reede');
+		break;
+	case 6:
+		console.log('Laupäev');
+		break;
 }
-
-
-if(age < 18 || age > 65){
-	console.log(`${name} ei saa registreerida`);
-} else {
-	console.log(`${name} saab registreerida`);
-}
-
-// ? - ternary operator
-console.log(id === 100 ? 'OK' : 'NOT OK');
-
-if(id === 10) 
-	console.log('OK');
-else 
-	console.log('NOT');
