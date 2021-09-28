@@ -1,48 +1,47 @@
-// for tsükkel
-for(let i = 0; i < 10; i++){
-	// if(i % 2 === 0)
-		// console.log(i);
+// deklareerimine
+function greeting(firstname = 'Kadi', lastname = 'Tamm'){
+	/*
+	if(typeof firstname === 'undefined'){
+		firstname = 'Kadi';
+	}
+	if(typeof lastname === 'undefined'){
+		lastname = 'Tamm';
+	}
+	*/
+	return 'Tere, ' + firstname + ' ' + lastname;
 }
+// kasutamine
+greet = greeting('Anna', 'Karutina');
+console.log(greet);
 
-for(let i = 0; i < 10; i++){
-	// if(i === 5) break;
-	//if(i === 5) continue;
-	// console.log(i);
-}
-
-// while
-let i = 0;
-while(i < 10){
-	console.log(i);
-	i++;
-}
-
-// do while
-console.log('do-while');
-
-let j = 0;
-do{
-	console.log(j);
-	j++;
-} while(j < 10);
-
-// tsükklid ja massivid
-const cars = ['Ford', 'Honda', 'Toyota'];
-// for-iga 
-for(let i = 0; i < cars.length; i++){
-	console.log(cars[i]);
-}
-// foreach-iga
-cars.forEach(function(car, index){
-	console.log(`${index} - ${car}`);
-});
-
-
-const person = {
-	firstname: 'Kadi',
-	lastname: 'Tamm',
-	age: 25
+// f-on defineeritud nagu const
+const square = function(number = 3){
+	return Math.pow(number, 2);
 };
-for(let element in person){
-	console.log(`${element} - ${person[element]}`);
-}
+console.log(square());
+
+// f-on, mis kohe töötab koodis
+(function(){
+	console.log('function is ran');	
+})();
+
+(function(name){
+	console.log('Tere, ' + name);
+})('Anna');
+
+// f-oni objekti atribuutidena
+const todoList = {
+	add: function(task){
+		console.log(task + ' is added');
+	},
+	edit: function(oldtask, newtask){
+		console.log(`${oldtask} is changed to ${newtask}`);
+	},
+	delete: function(task){
+		console.log(task + ' is deleted');
+	}
+};
+
+todoList.add('Study JS');
+todoList.edit('Study JS', 'Study TypeScript');
+todoList.delete('Study JS');
