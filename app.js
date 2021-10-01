@@ -1,22 +1,17 @@
 let val;
+// elementide loomine
+const li = document.createElement('li');
+// klassi määramine
+li.className = 'collection-item';
+// teksi lisamine
+li.appendChild(document.createTextNode('Study JS element creation'));
 
-const list = document.querySelector('ul');
-const listItem = document.querySelector('li:first-child');
+// kodune töö
+// loo link X näitamiseks
+// ja lisa li sisse
+// siin peab olema sinu kood
 
-val = list.children;
-val = list.children[1];
-// list.children[1].textContent = 'Study XML';
-val = list.children[2].children;
-// list.children[2].children[0].style.color = 'blue';
 
-val = list.firstElementChild;
-val = list.lastElementChild;
-val = list.childElementCount;
-
-val = listItem.parentElement;
-val = listItem.parentElement.parentElement;
-
-val = listItem.nextElementSibling;
-val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
-
-console.log(val);
+// lisame li element ul-sse
+const ul = document.querySelector('ul');
+ul.appendChild(li);
