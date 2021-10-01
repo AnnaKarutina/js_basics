@@ -1,26 +1,22 @@
 let val;
 
-val = document.querySelectorAll('li');
+const list = document.querySelector('ul');
+const listItem = document.querySelector('li:first-child');
 
-// for tsükliga
-for(let i = 0; i < val.length; i++){
-	if(i % 2 == 0){
-		document.querySelectorAll('li')[i].style.background = '#ddd';
-	} else {
-		document.querySelectorAll('li')[i].style.background = '#eee';
-	}
-}
+val = list.children;
+val = list.children[1];
+// list.children[1].textContent = 'Study XML';
+val = list.children[2].children;
+// list.children[2].children[0].style.color = 'blue';
 
+val = list.firstElementChild;
+val = list.lastElementChild;
+val = list.childElementCount;
 
-// foreach tsükliga
-oddli = document.querySelectorAll('li:nth-child(odd)');
-evenli = document.querySelectorAll('li:nth-child(even)');
+val = listItem.parentElement;
+val = listItem.parentElement.parentElement;
 
-oddli.forEach(function(li){
-	li.style.background = 'orange';
-})
-evenli.forEach(function(li){
-	li.style.background = 'salmon';
-})
+val = listItem.nextElementSibling;
+val = listItem.nextElementSibling.nextElementSibling.previousElementSibling;
 
 console.log(val);
