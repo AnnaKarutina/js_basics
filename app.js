@@ -1,19 +1,26 @@
 let val;
 
-val = document.getElementById('task-title');
+val = document.querySelectorAll('li');
 
-document.getElementById('task-title').style.background = '#333';
-document.getElementById('task-title').style.color = '#fff';
-document.getElementById('task-title').style.padding = '5px';
+// for tsükliga
+for(let i = 0; i < val.length; i++){
+	if(i % 2 == 0){
+		document.querySelectorAll('li')[i].style.background = '#ddd';
+	} else {
+		document.querySelectorAll('li')[i].style.background = '#eee';
+	}
+}
 
-document.getElementById('task-title').textContent = 'My Tasks';
-document.getElementById('task-title').innerText = 'My Favorite Tasks';
-document.getElementById('task-title').innerHTML = '<span style="color: orange;">My Tasks</span>'
 
-val = document.querySelector('h4');
-val = document.querySelector('#task-title');
-val = document.querySelector('.collection-item');
-val = document.querySelector('.collection-item:nth-child(even)');
-val = document.querySelector('.collection-item:nth-child(odd)');
+// foreach tsükliga
+oddli = document.querySelectorAll('li:nth-child(odd)');
+evenli = document.querySelectorAll('li:nth-child(even)');
+
+oddli.forEach(function(li){
+	li.style.background = 'orange';
+})
+evenli.forEach(function(li){
+	li.style.background = 'salmon';
+})
 
 console.log(val);
