@@ -11,6 +11,12 @@ li.appendChild(document.createTextNode('Study JS element creation'));
 // ja lisa li sisse
 // siin peab olema sinu kood
 
+const link = document.createElement('a');
+link.className = 'secondary-content';
+link.appendChild(document.createTextNode('X'));
+link.setAttribute('href', '#');
+li.appendChild(link);
+
 
 // lisame li element ul-sse
 const ul = document.querySelector('ul');
