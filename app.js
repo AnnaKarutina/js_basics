@@ -14,6 +14,9 @@ taskList.addEventListener('click', removeTask);
 // clearBtn click event
 clearBtn.addEventListener('click', clearTasks);
 
+// page reload
+document.addEventListener('DOMContentLoaded', getTasksFromLS);
+
 
 function addTask(e) {
 	const li = document.createElement('li');
@@ -78,4 +81,25 @@ function removeTaskFromLS(task){
 		}
 	});
 	localStorage.setItem('tasks', JSON.stringify(tasks));
+}
+
+function getTasksFromLS(e){
+	let tasks;
+	if(localStorage.getItem('tasks') === null){
+		tasks = [];
+	} else {
+		tasks = JSON.parse(localStorage.getItem('tasks'));
+	}
+	tasks.forEach(function(tasksElement){
+		const li = document.createElement('li');
+		li.className = 'collection-item';
+		li.appendChild(document.createTextNode(tasksElement));
+		
+		const link = document.createElement('a');
+		link.className = 'secondary-content';
+		link.appendChild(document.createTextNode('X'));
+		link.setAttribute('href', '#');
+		li.appendChild(link);
+		taskList.appendChild(li);
+	});
 }
